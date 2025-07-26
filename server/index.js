@@ -4,8 +4,9 @@ import cors from 'cors';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 // Ganti dengan API key kamu dari https://makersuite.google.com/app/apikey
-const genAI = new GoogleGenerativeAI("AIzaSyDcfXPO0g-klzjpwlY-jxGJD9LQi-kDaIE");
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+const PORT = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -38,8 +39,6 @@ Balas dengan profesional dan personal.
     res.status(500).json({ error: 'Gagal memproses permintaan ke Gemini API.' });
   }
 });
-
-const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server Gemini berjalan di port ${PORT}`);
