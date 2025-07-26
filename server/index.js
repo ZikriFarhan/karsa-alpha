@@ -39,6 +39,8 @@ Balas dengan profesional dan personal.
   }
 });
 
-app.listen(5000, () => {
-  console.log("✅ Server Gemini berjalan di http://localhost:5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server Gemini berjalan di port ${PORT}`);
 });
