@@ -3,9 +3,9 @@ import './App.css';
 import Chat from './components/Chat';
 
 function App() {
-  // const handleAssessmentClick = () => {
-  //   window.open('https://docs.google.com/forms/d/FORM_ID/viewform', '_blank');
-  // };
+  const openForm = () => {
+    window.open('https://forms.gle/UMeJsyRY8hi2v8MJ7', '_blank');
+  };
 
   return (
     <div className="landing-page">
@@ -29,7 +29,7 @@ function App() {
       <section className="cta-section">
         <h2>Siap Memulai Jalur Belajar?</h2>
         <p>Klik tombol di bawah untuk mengisi asesmen awal Anda.</p>
-        <button className="cta-button" >
+        <button className="cta-button" onClick={openForm}>
           Mulai Asesmen
         </button>
       </section>
